@@ -22,3 +22,7 @@ roms/chichevaders/vaders
 roms/perrodlauncher/perrod
 roms/skate/skate
 roms/yakanoid/yakanoid
+
+# Bear file
+k/.cache/
+k/compile_commands.json
