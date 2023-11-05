@@ -1,0 +1,24 @@
+# Build dir
+iso/
+
+# The k.iso
+k.iso
+
+# My doc 
+docs/
+
+# File create by gcc
+*.o
+*.d
+*.a
+
+# My kernel
+k/k
+
+# The exec of each rooms
+roms/chichehunter/hunter
+roms/chichepong/pong
+roms/chichevaders/vaders
+roms/perrodlauncher/perrod
+roms/skate/skate
+roms/yakanoid/yakanoid
