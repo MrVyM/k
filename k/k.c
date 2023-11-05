@@ -31,12 +31,16 @@ void k_main(unsigned long magic, multiboot_info_t *info)
 	(void)magic;
 	(void)info;
 
-	char star[4] = "|/-\\";
-	char *fb = (void *)0xb8000;
+    char text[13] = "Hello World !";
+    char *prompt = (void *)0xb8000;
 
-	for (unsigned i = 0; ; ) {
-		*fb = star[i++ % 4];
-	}
+    for (unsigned i = 0; ; ) {
+        *prompt = text[i++ % 13];
+        *(prompt+1) = CONS_RED;
+        prompt += 2;
+        if ((void*)prompt >= (void*)(0xb8000 + 2 * 13))
+            prompt = (void *)0xb8000;
+    }
 
 	for (;;)
 		asm volatile ("hlt");
