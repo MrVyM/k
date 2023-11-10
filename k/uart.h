@@ -1,10 +1,10 @@
 #ifndef UART_H
 #define UART_H
 
-#define COM1 ((void*)0x3F8)
-#define COM2 ((void*)0x2F8)
-#define COM3 ((void*)0x3E8)
-#define COM4 ((void*)0x2E8)
+#define COM1 ((char*)0x3F8)
+#define COM2 ((char*)0x2F8)
+#define COM3 ((char*)0x3E8)
+#define COM4 ((char*)0x2E8)
 
 enum uart_registers 
 {
@@ -24,5 +24,7 @@ enum uart_registers
 
 #include <k/types.h>
 int write(const char *buf, size_t count);
-char get_lsr_value(void *com, enum uart_registers offset);
+char get_lsr_value(char *com, enum uart_registers offset);
+void set_baud_rate(char *com, int rate);
+int get_baud_rate(char *com);
 #endif 
