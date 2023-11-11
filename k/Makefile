@@ -24,15 +24,13 @@
 include ../config.mk
 
 TARGET	= k
-OBJS	= \
-	  crt0.o \
-	  k.o \
-	  libvga.o \
-	  list.o \
-	  memory.o \
-	  panic.o \
-	  uart.o \
-
+OBJS =   crt0.o \
+         k.o \
+         libvga.o \
+         list.o \
+         memory.o \
+         panic.o \
+         drivers/uart.o \
 
 DEPS = $(OBJS:.o=.d)
 
